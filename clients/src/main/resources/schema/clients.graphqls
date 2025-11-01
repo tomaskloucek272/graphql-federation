@@ -1,0 +1,11 @@
+type Client @key(fields: "id") {
+    id: ID!
+    name: String!
+    email: String
+    createdAt: String
+    updatedAt: String
+}
+
+type Query {
+    client(id: ID!): Client
+}
