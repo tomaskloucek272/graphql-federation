@@ -38,5 +38,24 @@ type Query {
 }
 </code></pre>
 
+<h3>Merged federated entity of Client done automatically by NestJS gateway</h3>
+
+After starting both Spring boot microservices run NestJS gateway and check <b>http://localhost:3000</b>
+
+<code><pre>
+type Client {
+  createdAt: String
+  email: String
+  id: ID
+  name: String!
+  updatedAt: String
+  orders: [Order]
+}
+</code></pre>
+
+
+
+
+
 
 
