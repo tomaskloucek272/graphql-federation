@@ -19,6 +19,7 @@ type Query {
 </code></pre>
 
 <h3>Orders microservice GraphQL schema: </h3>
+
 <pre><code>
 type Order @key(fields: "id") {
     id: ID!
@@ -42,19 +43,30 @@ type Query {
 
 After starting both Spring boot microservices run NestJS gateway and check <b>http://localhost:3000</b>
 
-<code><pre>
+<pre><code>
 type Client {
-  createdAt: String
-  email: String
-  id: ID
-  name: String!
-  updatedAt: String
-  orders: [Order]
+   createdAt: String
+   email: String
+   id: ID
+   name: String!
+   updatedAt: String
+   orders: [Order]
 }
 </code></pre>
 
+Query:
 
-
+<pre><code>
+query {
+  client(id: "1") {
+    email
+    name
+    orders {
+      total
+    }
+  }
+}
+</code></pre>
 
 
 
