@@ -70,19 +70,17 @@ results:
 Now how federation worked between both microservices:
 
 - Gateway first contacted client microservice for entity with ID = 1. (client console, method printing => 'Invoking getClient')
+<img width="2068" height="126" alt="image" src="https://github.com/user-attachments/assets/87b29c44-bd94-4b22-96b6-bc77d17090fc" />
+
 - Gateway then contacted orders microservice with _entities query. (orders console, method printing => 'OrderDatafetcherImpl: client')
 - Gateway in the final step contacted again orders for the final data hydration (orders console, method printing => 'OrderDatafetcherImpl: resolveOrders')
+<img width="1914" height="108" alt="image" src="https://github.com/user-attachments/assets/8b948eba-9e7c-4025-904b-30cce9431aa7" />
 
 => so we have two microservices both contributing with data for <b>ONE federated type = Client</b> offered by NestJS gateway. Pretty nice I would say :)
 
 For more info about used GraphQL java implementation check amazing solution provided by Netflix: https://netflix.github.io/dgs/federation/
 
 Also don't forget to check federation support by NestJS: https://docs.nestjs.com/graphql/federation
-
-
-
-
-
 
 
 
