@@ -1,4 +1,4 @@
-<h1>NestJS Apollo Federation Gateway pro Spring Boot subgraphs</h1>
+<h1>NestJS Apollo Federation Gateway for Spring Boot subgraphs</h1>
 
 <img width="512" height="840" alt="image" src="https://github.com/user-attachments/assets/5d4afde7-7ad3-4275-a93e-bdac558e015e" />
 
