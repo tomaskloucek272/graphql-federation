@@ -42,6 +42,7 @@ type Query {
 <h3>Merged federated entity of Client done automatically by NestJS gateway</h3>
 
 After starting both Spring boot microservices run NestJS gateway and check <b>http://localhost:3000</b>
+Gateway merged both GraphQL graphs <b>where Client is owned by client microservice and orders is owned by orders microservice</b>:
 
 <pre><code>
 type Client {
@@ -54,19 +55,18 @@ type Client {
 }
 </code></pre>
 
-Query:
+Now query the gateway:
 
 <pre><code>
-query {
-  client(id: "1") {
-    email
-    name
-    orders {
-      total
-    }
-  }
-}
+curl -s http://localhost:3000/graphql \
+  -H 'Content-Type: application/json' \
+  --data-binary '{"query":"{ client(id:\"1\") { name email orders { total } } }"}' | jq
 </code></pre>
+
+results:
+
+<img width="1458" height="757" alt="image" src="https://github.com/user-attachments/assets/bd6e88c9-6ac4-44ce-9a5b-b38678e4d3da" />
+
 
 
 
