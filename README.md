@@ -18,3 +18,25 @@ type Query {
 }
 </code></pre>
 
+<h3>Orders microservice GraphQL schema: </h3>
+<pre><code>
+    type Order @key(fields: "id") {
+    id: ID!
+    clientId: ID!
+    total: Float!
+    status: String!
+    createdAt: String
+}
+
+type Client @key(fields: "id") @extends {
+    id: ID @external
+    orders: [Order]
+}
+
+type Query {
+    order(id: ID!): Order
+}
+</code></pre>
+
+
+
