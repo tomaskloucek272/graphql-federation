@@ -1,6 +1,6 @@
 <h1>NestJS Apollo Federation Gateway for Spring Boot subgraphs</h1>
 
-<img width="512" height="840" alt="image" src="https://github.com/user-attachments/assets/5d4afde7-7ad3-4275-a93e-bdac558e015e" />
+<img width="512" height="840" alt="image" src="https://github.com/user-attachments/assets/df3d37be-fdbc-4f64-b600-03fc15e5bcee" />
 
 <h3>Client microservice GraphQL schema: </h3>
 
@@ -69,11 +69,16 @@ results:
 
 Now how federation worked between both microservices:
 
-- Gateway first contacted client microservice for entity with ID = 1. (client console => 'Invoking getClient')
-- Gateway then contacted orders microservice with _entities query. (orders console => 'OrderDatafetcherImpl: client')
-- Gateway in the final steps contacts again orders for the final hydration (orders console => 'OrderDatafetcherImpl: resolveOrders')
+- Gateway first contacted client microservice for entity with ID = 1. (client console, method printing => 'Invoking getClient')
+- Gateway then contacted orders microservice with _entities query. (orders console, method printing => 'OrderDatafetcherImpl: client')
+- Gateway in the final step contacted again orders for the final data hydration (orders console, method printing => 'OrderDatafetcherImpl: resolveOrders')
 
-=> so we have two microservices both contributing with data for <b>ONE federated type = Client</b>
+=> so we have two microservices both contributing with data for <b>ONE federated type = Client</b> offered by NestJS gateway. Pretty nice I would say :)
+
+For more info about used GraphQL java implementation check amazing solution provided by Netflix: https://netflix.github.io/dgs/federation/
+
+Also don't forget to check federation support by NestJS: https://docs.nestjs.com/graphql/federation
+
 
 
 
