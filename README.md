@@ -1,6 +1,6 @@
 <h1>NestJS Apollo Federation Gateway for Spring Boot subgraphs</h1>
 
-<img width="512" height="840" alt="image" src="https://github.com/user-attachments/assets/df3d37be-fdbc-4f64-b600-03fc15e5bcee" />
+<img width="512" height="840" alt="image" src="https://github.com/user-attachments/assets/74efd75d-f400-4d18-bf52-f603a4cd5049" />
 
 <h3>Client microservice GraphQL schema: </h3>
 
